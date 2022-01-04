@@ -90,6 +90,8 @@ window.addEventListener('load', async() => {
             catchphrases: [],
         });
     }
+
+    catchphrases = character.catchphrases;
     // create a new character with correct defaults for all properties (head, middle, bottom, catchphrases)
     // and put the character's catchphrases in state (we'll need to hold onto them for an interesting reason);
 
