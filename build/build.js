@@ -107,16 +107,16 @@ function displayStats() {
     reportEl.textContent = `In this session, you have changed the head ${headCount} times, the body ${middleCount} times, and the pants ${bottomCount} times. And nobody can forget your character's classic catchphrases:`;
 }
 // Added in this function to display the catchphrase, unsure on any other ways
-function displayCatchphrases() {
-    chatchphrasesEl.textContent = '';
-    for (let catchphrase of catchphrases){
-        const p = document.createElement('p');
-        p.classList.add('catchphrase');
-        p.textContent = catchphrase;
-        chatchphrasesEl.append(p);
-    }
+// function displayCatchphrases() {
+//     chatchphrasesEl.textContent = '';
+//     for (let catchphrase of catchphrases){
+//         const p = document.createElement('p');
+//         p.classList.add('catchphrase');
+//         p.textContent = catchphrase;
+//         chatchphrasesEl.append(p);
+//     }
 
-}
+
 
 
 
@@ -130,11 +130,19 @@ async function fetchAndDisplayCharacter() {
     // if the character has a pants, display the pants in the dom
     if (bottom) bottomEl.style.backgroundImage = `url("../assets/${bottom}-pants.png")`;
     // loop through catchphrases and display them to the dom (clearing out old dom if necessary)
+
+    chatchphrasesEl.textContent = '';
+    for (let catchphrase of catchphrases){
+        const p = document.createElement('p');
+        p.classList.add('catchphrase');
+        p.textContent = catchphrase;
+        chatchphrasesEl.append(p);
+    }
 }
 
 
 function refreshData() {
     displayStats();
     fetchAndDisplayCharacter();
-    displayCatchphrases();
+    // displayCatchphrases();
 }
